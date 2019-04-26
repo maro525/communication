@@ -2,7 +2,7 @@ import json
 import time
 import zmq
 
-PORT = 5775
+PORT = 3000
 
 context = zmq.Context()
 socket = context.socket(zmq.SUB)

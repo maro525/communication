@@ -3,7 +3,7 @@ import zmq
 import time
 import json
 
-PORT = 5775
+PORT = 3000
 if len(sys.argv) > 1:
     PORT = sys.argv[1]
     int(PORT)
@@ -18,9 +18,9 @@ td["hello"] = 199
 
 while True:
     td["hello"] += 1
-    # std = json.dumps(td)
-    print("send", td)
-    socket.send_json(td)
+    std = json.dumps(td)
+    print("send", std)
+    socket.send_string(std)
     time.sleep(1)
 
 # while True:
